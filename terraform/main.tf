@@ -47,8 +47,11 @@ data "aws_vpc" "default" {
 }
 
 # Fetch the default public subnets in the VPC
-data "aws_subnet_ids" "default_public_subnets" {
-  vpc_id = data.aws_vpc.default.id
+data "aws_subnets" "default_public_subnets" {
+  filter {
+    name   = "vpc-id"
+    values = [data.aws_vpc.default.id]
+  }
 }
 
 # Security Group for EC2 instances (SSH, HTTP, HTTPS)
