@@ -138,7 +138,7 @@ resource "aws_key_pair" "deployer" {
 # Create the Ubuntu EC2 instance
 resource "aws_instance" "web_ubuntu" {
   ami                    = data.aws_ami.ubuntu.id
-  instance_type          = "t2.micro"
+  instance_type          = var.instance_type
   key_name               = "web-server-key"
   vpc_security_group_ids = [aws_security_group.web_sg.id]
 
@@ -152,7 +152,7 @@ resource "aws_instance" "web_ubuntu" {
 # Create the Amazon Linux EC2 instance
 resource "aws_instance" "web_linux" {
   ami                    = data.aws_ami.amazon_linux.id
-  instance_type          = "t2.micro"
+  instance_type          = var.instance_type
   key_name               = "web-server-key"
   vpc_security_group_ids = [aws_security_group.web_sg.id]
 
