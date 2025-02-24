@@ -142,7 +142,7 @@ resource "aws_key_pair" "deployer" {
 resource "aws_instance" "web_ubuntu" {
   ami                    = data.aws_ami.ubuntu.id
   instance_type          = var.instance_type
-  key_name               = "web-server-key"
+  key_name               = file("server.pem")
   vpc_security_group_ids = [aws_security_group.web_sg.id]
 
   # User data script for Ubuntu instance
@@ -156,7 +156,7 @@ resource "aws_instance" "web_ubuntu" {
 resource "aws_instance" "web_linux" {
   ami                    = data.aws_ami.amazon_linux.id
   instance_type          = var.instance_type
-  key_name               = "web-server-key"
+  key_name               = file("server.pem")
   vpc_security_group_ids = [aws_security_group.web_sg.id]
 
   # User data script for Amazon Linux instance
