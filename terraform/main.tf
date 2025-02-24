@@ -224,7 +224,7 @@ resource "aws_lb" "web_alb" {
   internal           = false  # Make it external
   load_balancer_type = "application"
   security_groups    = [aws_security_group.alb_sg.id]
-  subnets            = data.aws_subnet_ids.default_public_subnets.ids  # Use default public subnets
+  subnets            = data.aws_subnets.default_public_subnets.ids  # Use default public subnets
   enable_deletion_protection = false
 
   enable_cross_zone_load_balancing = true
