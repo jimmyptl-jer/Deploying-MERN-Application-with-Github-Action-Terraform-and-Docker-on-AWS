@@ -48,6 +48,7 @@ jobs:
   # Deploy job to build and push Docker images to Docker Hub.
   docker-registry-upload:
     runs-on: ubuntu-latest
+    needs: build
 
     steps:
       # Step 1: Checkout the repository code
