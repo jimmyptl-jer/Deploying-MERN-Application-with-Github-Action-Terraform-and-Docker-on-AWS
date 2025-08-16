@@ -1,5 +1,3 @@
-Here’s a README file for your repository:
-
 Deploying MERN Application with GitHub Actions, Terraform, and Docker on AWS
 
 Overview
@@ -114,5 +112,3 @@ Future Improvements
 License
 
 This project is open-source and available under the MIT License.
-
-Let me know if you want to modify anything!
