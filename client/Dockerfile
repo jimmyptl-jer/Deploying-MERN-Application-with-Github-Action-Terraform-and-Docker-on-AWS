@@ -17,7 +17,7 @@ COPY . .
 RUN npm run build
 
 # Stage 2: Serve the built files using Nginx
-FROM nginx:1.29.0
+FROM nginx:1.29.1
 
 # Copy a custom Nginx configuration file, if needed, to configure how Nginx serves your app
 COPY nginx.conf /etc/nginx/conf.d/default.conf
